@@ -26,7 +26,7 @@ public class CsvReadWrite : MonoBehaviour {
         rowData.Add(rowDataTemp);
 
         // Creating First row of titles manually..
-        rowDataTemp = new string[26];
+        rowDataTemp = new string[34];
         rowDataTemp[0] = "ID";
         rowDataTemp[1] = "Date-timestamp";
         rowDataTemp[2] = "Level-3-Fejl";
@@ -53,8 +53,16 @@ public class CsvReadWrite : MonoBehaviour {
         rowDataTemp[23] = "Level-8-Fejl-type-A";
         rowDataTemp[24] = "Level-8-Fejl-type-B";
         rowDataTemp[25] = "Level-8-Tid";
-       
-       
+        rowDataTemp[26] = "Level-9-Fejl";
+        rowDataTemp[27] = "Level-9-Fejl-type-A";
+        rowDataTemp[28] = "Level-9-Fejl-type-B";
+        rowDataTemp[29] = "Level-9-Tid";
+        rowDataTemp[30] = "Level-10-Fejl";
+        rowDataTemp[31] = "Level-10-Fejl-type-A";
+        rowDataTemp[32] = "Level-10-Fejl-type-B";
+        rowDataTemp[33] = "Level-10-Tid";
+
+
         rowData.Add(rowDataTemp);
 
         /*string filePath = getPath();
@@ -131,28 +139,30 @@ public class CsvReadWrite : MonoBehaviour {
             string filePath = getPath();
 
             /****************** IF DATA IS SAVED IN FILE ON SERVER ************************/
-            finalData = "\n" + Globals.playerName + "," + DateTime.Now.ToString() + "," + Globals.resultsLevel3 + Globals.resultsLevel4 + Globals.resultsLevel5 + Globals.resultsLevel6 + Globals.resultsLevel7 + Globals.resultsLevel8 + "\n";
+            /*finalData = "\n" + Globals.playerName + "," + DateTime.Now.ToString() + "," + Globals.resultsLevel3 + Globals.resultsLevel4 + Globals.resultsLevel5 + Globals.resultsLevel6 + Globals.resultsLevel7 + Globals.resultsLevel8 + Globals.resultsLevel9 + Globals.resultsLevel10 +"\n";
             StartCoroutine(SetTheText(finalData));
             Debug.Log("Writetofile = " + Globals.writeToFile);
             Debug.Log("FinalData = " + finalData);
-
+            */
             /******************************************************************************/
 
             /******************** LOC01 START - IF DATA IS SAVED IN LOCAL FILE ****************/
             
-            /*if (!File.Exists(filePath))
+            if (!File.Exists(filePath))
             {
-                StreamWriter outStream = System.IO.File.CreateText(filePath);
+                StreamWriter outStream = File.CreateText(filePath);
                 outStream.WriteLine("sep=,");
-                outStream.WriteLine("ID,Date-timestamp,Level-3-Fejl,Level-3-Fejl-type-A,Level-3-Fejl-type-B,Level-3-Tid,Level-4-Fejl,Level-4-Fejl-type-A,Level-4-Fejl-type-B,Level-4-Tid,Level-5-Fejl,Level-5-Fejl-type-A,Level-5-Fejl-type-B,Level-5-Tid,Level-6-Fejl,Level-6-Fejl-type-A,Level-6-Fejl-type-B,Level-6-Tid,Level-7-Fejl,Level-7-Fejl-type-A,Level-7-Fejl-type-B,Level-7-Tid,Level-8-Fejl,Level-8-Fejl-type-A,Level-8-Fejl-type-B,Level-8-Tid");
-                outStream.WriteLine("\n" + Globals.playerName + "," + DateTime.Now.ToString() + "," + Globals.resultsLevel3 + Globals.resultsLevel4 + Globals.resultsLevel5 + Globals.resultsLevel6 + Globals.resultsLevel7 + Globals.resultsLevel8 + "\n");
-                //outStream.WriteLine(sb + "," + Globals.resultsLevel3 + Globals.resultsLevel4);
+                outStream.WriteLine("ID,Date-timestamp,Level-3-Fejl,Level-3-Fejl-type-A,Level-3-Fejl-type-B,Level-3-Tid,Level-4-Fejl,Level-4-Fejl-type-A,Level-4-Fejl-type-B,Level-4-Tid" +
+                    ",Level-5-Fejl,Level-5-Fejl-type-A,Level-5-Fejl-type-B,Level-5-Tid,Level-6-Fejl,Level-6-Fejl-type-A,Level-6-Fejl-type-B,Level-6-Tid" +
+                    ",Level-7-Fejl,Level-7-Fejl-type-A,Level-7-Fejl-type-B,Level-7-Tid,Level-8-Fejl,Level-8-Fejl-type-A,Level-8-Fejl-type-B,Level-8-Tid" +
+                    ",Level-9-Fejl,Level-9-Fejl-type-A,Level-9-Fejl-type-B,Level-9-Tid,Level-10-Fejl,Level-10-Fejl-type-A,Level-10-Fejl-type-B,Level-10-Tid");
+                outStream.WriteLine("\n" + Globals.playerName + "," + DateTime.Now.ToString() + "," + Globals.resultsLevel3 + Globals.resultsLevel4 + Globals.resultsLevel5 + Globals.resultsLevel6 + Globals.resultsLevel7 + Globals.resultsLevel8 + Globals.resultsLevel9 + Globals.resultsLevel10 + "\n");
                 outStream.Close();
             }
             else 
             {
-                File.AppendAllText(filePath, "\n" + Globals.playerName + "," + DateTime.Now.ToString() + "," + Globals.resultsLevel3 + Globals.resultsLevel4 + Globals.resultsLevel5 + Globals.resultsLevel6 + Globals.resultsLevel7 + Globals.resultsLevel8 + "\n");
-            }*/
+                File.AppendAllText(filePath, "\n" + Globals.playerName + "," + DateTime.Now.ToString() + "," + Globals.resultsLevel3 + Globals.resultsLevel4 + Globals.resultsLevel5 + Globals.resultsLevel6 + Globals.resultsLevel7 + Globals.resultsLevel8 + Globals.resultsLevel9 + Globals.resultsLevel10 + "\n");
+            }
             
             /******************** LOC01 END *********************************************/
             

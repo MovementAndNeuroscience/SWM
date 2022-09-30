@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
+using TMPro; 
 
 public class StartButton : MonoBehaviour
 {
-    public InputField input;
+    public TMP_InputField tmp_input; 
 
     // Start is called before the first frame update
     void Start()
@@ -14,17 +12,10 @@ public class StartButton : MonoBehaviour
     }        
 
     public void OnClick(){
-        if (input.text != "")
+        if(tmp_input.text != "")
         {
-            Globals.playerName = input.text;
+            Globals.playerName = tmp_input.text;
             Globals.clickOnStart = true;
-            //Debug.Log("PlayerName: " + Globals.playerName);
-            //Debug.Log("clickOnStart: " + Globals.clickOnStart);
-            //Debug.Log("gameStarted: " + Globals.gameStarted);
-        }
-        else
-        {
-            
         }
     }
 }
